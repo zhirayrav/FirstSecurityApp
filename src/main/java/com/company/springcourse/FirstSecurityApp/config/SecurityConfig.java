@@ -32,7 +32,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.anyRequest().authenticated()
 		.and()
 		.formLogin().loginPage("/auth/login").loginProcessingUrl("/process_login")
-		.defaultSuccessUrl("/hello", true).failureUrl("/auth/login?error");
+		.defaultSuccessUrl("/hello", true).failureUrl("/auth/login?error")
+		.and()
+		.logout().logoutUrl("/logout").logoutSuccessUrl("/auth/login");
 	}
 	@Bean
 	public PasswordEncoder getPasswordEncoder() {
