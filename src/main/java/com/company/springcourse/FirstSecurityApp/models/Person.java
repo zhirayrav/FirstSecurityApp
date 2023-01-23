@@ -26,6 +26,8 @@ public class Person {
 	private int year_of_birth;
 	@Column
 	private String password;
+	@Column
+	private String role;
 	
 	public Person() {}
 	public Person(
@@ -58,6 +60,12 @@ public class Person {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 	@Override
 	public String toString() {
